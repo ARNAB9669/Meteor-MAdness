@@ -1,0 +1,222 @@
+
+
+/* --- Tablet / Medium Devices (768px - 1024px) --- */
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .nav_right ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .filter {
+        flex-direction: column;
+        gap: 25px;
+        
+    }
+
+    .filter_left,
+    .filter_right {
+        width: 100%;
+    }
+
+    .count {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .count1,
+    .count2 {
+        flex: 1 1 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+}
+
+/* --- Mobile / Small Devices (max-width: 768px and below) --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 5%;
+    }
+
+    .nav_right ul {
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .filter {
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .filter_left,
+    .filter_right {
+        width: 100%;
+    }
+
+    /* Count Section */
+    .count {
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .count1,
+    .count2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .count h3 {
+        font-size: 1.5em;
+    }
+
+    .count h5 {
+        font-size: 0.85em;
+        text-align: center;
+    }
+
+    .filter_right {
+        width: 90%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
+    .ok {
+        display: flex;
+
+    }
+
+    .custom.cs2,
+    .custom.cs3 {
+
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .searh {
+        height: auto;
+        justify-content: center;
+    }
+
+    .filter_butt {
+        width: 25px;
+        height: 25px;
+        padding: 8px;
+    }
+
+    /* Cards */
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card-header h3 {
+        font-size: 1.4em;
+    }
+
+    .card-header .id {
+        font-size: 0.7em;
+    }
+
+    .card-body p {
+        font-size: 0.8em;
+    }
+
+    .card_heading {
+        font-size: 1.5em;
+        padding-bottom: 10px;
+    }
+
+}
+
+/* --- Extra Small Devices (max-width: 480px) --- */
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 5%;
+    }
+
+    .nav_right ul li a {
+        font-size: 14px;
+    }
+
+    .filter_left h2 {
+        font-size: 2em;
+    }
+
+    .filter_left h3 {
+        font-size: 0.9em;
+    }
+
+    .count h3 {
+        font-size: 1.3em;
+    }
+
+    .count h5 {
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .ok {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .custom.cs2,
+    .custom.cs3 {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .cs2 {
+        text-align: left !important;
+    }
+
+    .filter_butt {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw-Data</title>
+    <style>
+        body {
+            background-color: rgb(17, 1, 71);
+        }
+
+        table {
+            width: 80%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        th,
+        td {
+            border: 1px solid aqua;
+            padding: 12px 20px;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        th {
+            background-color: rgba(0, 255, 255, 0.2);
+            color: aqua;
+            font-size: 1.1em;
+        }
+
+        td {
+            color: #00ff0d;
+        }
+
+        tr:hover {
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 255, 255, 0.1);
+            color: aqua;
+            font-family: monospace;
+            border-top: 1px solid aqua;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1 style="color:aqua; text-align: center; margin-top:50px;">---`${ RAW_API_DATA }`---</h1>
+    </nav>
+
+
+    <main>
+        <table style="color: rgb(0, 255, 13);">
+            <tr>
+                <th>Data_Field👇</th>
+                <th>Data_Value</th>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td id="ID">VAl</td>
+            </tr>
+            <tr>
+                <td>NAME</td>
+                <td id="NAME">VAl</td>
+            </tr>
+            <tr>
+                <td>hazardous</td>
+                <td id="Risk">Val</td>
+            </tr>
+            <tr>
+                <td>Diameter_min_km</td>
+                <td id="Diameter_min_km">Val</td>
+            </tr>
+            <tr>
+                <td>Diameter_max_km</td>
+                <td id="Diameter_max_km">Val</td>
+            </tr>
+            <tr>
+                <td>Orbit_class</td>
+                <td id="Orbit_class">Val</td>
+            </tr>
+            <tr>
+                <td>Semi_major_axis</td>
+                <td id="Semi_major_axis">Val</td>
+            </tr>
+            <tr>
+                <td>Eccentricity</td>
+                <td id="Eccentricity">Val</td>
+            </tr>
+            <tr>
+                <td>Inclination</td>
+                <td id="Inclination">Val</td>
+            </tr>
+            <tr>
+                <td>Perihelio</td>
+                <td id="Perihelio">Val</td>
+            </tr>
+            <tr>
+                <td>Aphelion</td>
+                <td id="Aphelion">Val</td>
+            </tr>
+            <tr>
+                <td>Orbital_period_Day</td>
+                <td id="Orbital_period">Val</td>
+            </tr>
+            <tr>
+                <td>Miss_distance_km</td>
+                <td id="Miss_distance_km">Val</td>
+            </tr>
+            <tr>
+                <td>Velocity_km/s</td>
+                <td id="Velocity_km_s">Val</td>
+            </tr>
+            <tr>
+                <td>Orbiting_body</td>
+                <td id="Orbiting_body">Val</td>
+            </tr>
+        </table>
+    </main>
+
+
+    <footer>
+        <p>Built for NASA Space Apps Hackathon 🚀 | Data powered by NASA APIs</p>
+    </footer>
+
+    <script>
+        const base_url = "https://script.google.com/macros/s/AKfycby29jhoLsLNUiFypxMqI0NQOPFpVh5VD9oWk1JpMGQHEHQNuE5SCyjvuj9qdzPv2zw_6w/exec";
+        const asteroidID = localStorage.getItem("selectedAsteroidID");
+        const url = `${base_url}?id=${asteroidID}`;
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    document.getElementById("ID").textContent = data.ID;
+                    document.getElementById("NAME").textContent = data.Name;
+                    document.getElementById("Risk").textContent = data.Hazardous;
+                    document.getElementById("Diameter_min_km").textContent = data.Diameter_min_km;
+                    document.getElementById("Diameter_max_km").textContent = data.Diameter_max_km;
+                    document.getElementById("Orbit_class").textContent = data.Orbit_class;
+                    document.getElementById("Semi_major_axis").textContent = data.Semi_major_axis;
+                    document.getElementById("Eccentricity").textContent = data.Eccentricity;
+                    document.getElementById("Inclination").textContent = data.Inclination;
+                    document.getElementById("Perihelio").textContent = data.Perihelion;
+                    document.getElementById("Aphelion").textContent = data.Aphelion;
+                    document.getElementById("Orbital_period").textContent = data.Orbital_period;
+                    document.getElementById("Miss_distance_km").textContent = data.Miss_distance_km;
+                    document.getElementById("Velocity_km_s").textContent = data.Velocity_km_s;
+                    document.getElementById("Orbiting_body").textContent = data.Orbiting_body;
+                })
+                .catch(error => console.error('Error fetching asteroid data:', error));
+        });
+
+    </script>
+</body>
+
+</html>

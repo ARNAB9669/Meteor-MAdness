@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro_Pick</title>
+    <link rel="shortcut icon" type="x-icon" href="Nav_logo/Nav_logo.png">
+    <link rel="stylesheet" href="cards_style.css">
+    <link rel="stylesheet" href="Cards_responsive.css">
+</head>
+
+<body>
+    <section>
+        <nav>
+            <div class="nav_left">
+                <button id="theme-toggle">Toggle Theme</button>
+            </div>
+            <div class="nav_right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section class="filter">
+        <div class="filter_left">
+            <div>
+                <h2>Pick your Astroied</h2>
+                <h3>Explore our collection of some fascinating asteroids from across the solar system.</h3>
+                <div class="count">
+                    <div class="count1">
+                        <pre><h3 >X</h3>Total Astroied</pre>
+                    </div>
+                    <div class="count2">
+                        <pre><h3 >X</h3> Potential threat</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter_right">
+            <div class="cs1">
+                <h2> customize</h2>
+            </div>
+            <div class="ok">
+                <div class="custom cs2">
+                    <div class="searh">
+                        <h3>ALL</h3>
+                    </div>
+                    <div class="searh">
+                        <h3>Near Earth</h3>
+                    </div>
+                    <div class="searh">
+                        <h3>Potential risk</h3>
+                    </div>
+                </div>
+                <div class="custom cs3">
+                    <div class="searh">
+                        <button id="all" class="filter_butt"> </button>
+                    </div>
+                    <div class="searh">
+                        <button id="near" class="filter_butt"> </button>
+                    </div>
+                    <div class="searh">
+                        <button id="danger" class="filter_butt"> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="cards_section">
+        <h1 id="change" class="card_heading">X</h1>
+        <div class="cards" id="cards-container">
+            <!-- Cards will be dynamically inserted here -->
+        </div>
+    </section>
+    <script type="module" src="Cards_script.js"></script>
+    <script>
+        // Apply saved theme on load
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                document.body.classList.add("light-mode");
+            } else {
+                document.body.classList.remove("light-mode");
+            }
+        })();
+
+        const themeBtn = document.getElementById("theme-toggle");
+        themeBtn.addEventListener("click", () => {
+            const isLight = document.body.classList.toggle("light-mode");
+            // Save the selected theme to localStorage
+            if (isLight) {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+</body>
+
+</html>
