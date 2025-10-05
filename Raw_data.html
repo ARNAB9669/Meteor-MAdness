@@ -8,36 +8,41 @@
     <style>
         body {
             background-color: rgb(17, 1, 71);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        table {
-            width: 80%;
-            margin: 50px auto;
-            border-collapse: collapse;
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .card {
             background-color: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-        }
-
-        th,
-        td {
             border: 1px solid aqua;
-            padding: 12px 20px;
-            text-align: center;
+            border-radius: 8px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
             font-family: monospace;
-        }
-
-        th {
-            background-color: rgba(0, 255, 255, 0.2);
-            color: aqua;
-            font-size: 1.1em;
-        }
-
-        td {
             color: #00ff0d;
+            transition: transform 0.2s, background-color 0.2s;
         }
 
-        tr:hover {
+        .card h3 {
+            color: aqua;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .card:hover {
             background-color: rgba(0, 255, 255, 0.1);
+            transform: translateY(-5px);
         }
 
         footer {
@@ -64,73 +69,67 @@
     </nav>
 
 
-    <main>
-        <table style="color: rgb(0, 255, 13);">
-            <tr>
-                <th>Data_Field👇</th>
-                <th>Data_Value</th>
-            </tr>
-            <tr>
-                <td>ID</td>
-                <td id="ID">VAl</td>
-            </tr>
-            <tr>
-                <td>NAME</td>
-                <td id="NAME">VAl</td>
-            </tr>
-            <tr>
-                <td>hazardous</td>
-                <td id="Risk">Val</td>
-            </tr>
-            <tr>
-                <td>Diameter_min_km</td>
-                <td id="Diameter_min_km">Val</td>
-            </tr>
-            <tr>
-                <td>Diameter_max_km</td>
-                <td id="Diameter_max_km">Val</td>
-            </tr>
-            <tr>
-                <td>Orbit_class</td>
-                <td id="Orbit_class">Val</td>
-            </tr>
-            <tr>
-                <td>Semi_major_axis</td>
-                <td id="Semi_major_axis">Val</td>
-            </tr>
-            <tr>
-                <td>Eccentricity</td>
-                <td id="Eccentricity">Val</td>
-            </tr>
-            <tr>
-                <td>Inclination</td>
-                <td id="Inclination">Val</td>
-            </tr>
-            <tr>
-                <td>Perihelio</td>
-                <td id="Perihelio">Val</td>
-            </tr>
-            <tr>
-                <td>Aphelion</td>
-                <td id="Aphelion">Val</td>
-            </tr>
-            <tr>
-                <td>Orbital_period_Day</td>
-                <td id="Orbital_period">Val</td>
-            </tr>
-            <tr>
-                <td>Miss_distance_km</td>
-                <td id="Miss_distance_km">Val</td>
-            </tr>
-            <tr>
-                <td>Velocity_km/s</td>
-                <td id="Velocity_km_s">Val</td>
-            </tr>
-            <tr>
-                <td>Orbiting_body</td>
-                <td id="Orbiting_body">Val</td>
-            </tr>
-        </table>
+    <main class="card-container">
+        <div class="card">
+            <h3>ID</h3>
+            <p id="ID">Val</p>
+        </div>
+        <div class="card">
+            <h3>NAME</h3>
+            <p id="NAME">Val</p>
+        </div>
+        <div class="card">
+            <h3>hazardous</h3>
+            <p id="Risk">Val</p>
+        </div>
+        <div class="card">
+            <h3>Diameter_min_km</h3>
+            <p id="Diameter_min_km">Val</p>
+        </div>
+        <div class="card">
+            <h3>Diameter_max_km</h3>
+            <p id="Diameter_max_km">Val</p>
+        </div>
+        <div class="card">
+            <h3>Orbit_class</h3>
+            <p id="Orbit_class">Val</p>
+        </div>
+        <div class="card">
+            <h3>Semi_major_axis</h3>
+            <p id="Semi_major_axis">Val</p>
+        </div>
+        <div class="card">
+            <h3>Eccentricity</h3>
+            <p id="Eccentricity">Val</p>
+        </div>
+        <div class="card">
+            <h3>Inclination</h3>
+            <p id="Inclination">Val</p>
+        </div>
+        <div class="card">
+            <h3>Perihelio</h3>
+            <p id="Perihelio">Val</p>
+        </div>
+        <div class="card">
+            <h3>Aphelion</h3>
+            <p id="Aphelion">Val</p>
+        </div>
+        <div class="card">
+            <h3>Orbital_period_Day</h3>
+            <p id="Orbital_period">Val</p>
+        </div>
+        <div class="card">
+            <h3>Miss_distance_km</h3>
+            <p id="Miss_distance_km">Val</p>
+        </div>
+        <div class="card">
+            <h3>Velocity_km/s</h3>
+            <p id="Velocity_km_s">Val</p>
+        </div>
+        <div class="card">
+            <h3>Orbiting_body</h3>
+            <p id="Orbiting_body">Val</p>
+        </div>
     </main>
 
 
