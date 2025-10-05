@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const date = data.Next_Approach;
             Next_app.innerText = date;
             Diameter.innerText = data.Diameter_max_km;
-            localStorage.setItem("Diameter", data.Velocity_km_s);
+            localStorage.setItem("Velocity", data.Velocity_km_s);
             Velocity.innerText = data.Velocity_km_s;
-            localStorage.setItem("velocity", data.Diameter_max_km)
+            localStorage.setItem("Diameter", data.Diameter_max_km)
             Miss_Dist.innerText = data.Miss_distance_km;
             Orbital_period.innerText = data.Orbital_period;
             let denger = data.Hazardous;
