@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Creating base --> starts
     const canvas = document.getElementById("play");
     const scene = new THREE.Scene();
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+    scene.add(ambientLight);
+
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas });
 
@@ -216,6 +220,48 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("NE").innerText = energyInNuke.toFixed(2) + " times Nagasaki nuke";
             document.getElementById("csz").innerText = craterDiameter.toFixed(2) + " m";
             document.getElementById("tslv").innerText = tsunamiHeight.toFixed(2) + " m";
+
+            // Animation logic to move asteroid toward Earth and simulate collision
+            let collisionOccurred = false;
+            const collisionThreshold = 20; // Distance threshold for collision
+
+            function animateCollision() {
+                if (collisionOccurred) return;
+
+                // Calculate vector from asteroid to earth
+                const direction = new THREE.Vector3();
+                direction.subVectors(earth.position, asteroid.position);
+
+                const distance = direction.length();
+
+                if (distance < collisionThreshold) {
+                    // Collision effect: scale down and change color to red
+                    collisionOccurred = true;
+                    // Animate scaling down
+                    const scaleDownSteps = 30;
+                    let currentStep = 0;
+
+                    function collisionEffect() {
+                        if (currentStep < scaleDownSteps) {
+                            asteroid.scale.multiplyScalar(0.9);
+                            asteroid.material.color.set(0xff0000);
+                            currentStep++;
+                            requestAnimationFrame(collisionEffect);
+                        }
+                    }
+                    collisionEffect();
+                    return;
+                }
+
+                // Normalize direction and move asteroid closer
+                direction.normalize();
+                const moveSpeed = 1.5; // Adjust speed as needed
+                asteroid.position.addScaledVector(direction, moveSpeed);
+
+                requestAnimationFrame(animateCollision);
+            }
+
+            animateCollision();
         });
     }
 });
