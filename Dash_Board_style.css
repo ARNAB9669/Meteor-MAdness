@@ -10,7 +10,6 @@
 }
 body{
     background-color: var(--bc-color);
-    overflow: hidden;
 }
 body.light-mode {
     --bc-color: #f0f0f5;
