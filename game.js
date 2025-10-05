@@ -183,11 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let diameter = parseFloat(localStorage.getItem("Diameter"));
             let velocity = parseFloat(localStorage.getItem("Velocity"));
 
-            if (isNaN(diameter) || isNaN(velocity)) {
-                alert("Diameter or Velocity not set in localStorage.");
-                return;
-            }
-
             const avgDensity = 3000; // kg/m^3, average density for an asteroid
 
             // Calculate area of asteroid as a circle (π * r^2)
