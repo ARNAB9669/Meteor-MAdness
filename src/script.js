@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "Arnab Biswas": "FullStack Developer, 3D Animation,API Integration",
         "Rajdeep Das": "UX/UI, Frontend Developer",
         "Arya Kundu": "Presentation Maker, Communication",
-        "Sayantani": "Researcher",
         "Prolay Mondal": "UX/UI"
     };
 
@@ -50,4 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
             <p><strong>Estimated Crater Size:</strong> ~${craterSize.toFixed(1)} km in diameter</p>
         `;
     });
+
 });
