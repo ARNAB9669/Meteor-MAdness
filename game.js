@@ -1,5 +1,8 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import sunTexture from './Textures/sun_texture.jpg';
+import earthTextureImg from './Textures/Earth.jpeg';
+import asteroidTextureImg from './Textures/asteroid_texture.jpeg';
 
 document.addEventListener("DOMContentLoaded", () => {
     // Creating base --> starts
@@ -32,15 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3D models --> starts
     // Sun
-    const sunTexture = textureLoader.load('Textures/sun_texture.jpg');
+    const sunTextureLoaded = textureLoader.load(sunTexture);
     const sunGeometry = new THREE.SphereGeometry(30, 128, 128);
-    const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
+    const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTextureLoaded });
     const sun = new THREE.Mesh(sunGeometry, sunMaterial);
     sun.position.set(0, 0, 0);
     scene.add(sun);
 
     // Earth
-    const earthTexture = textureLoader.load('Textures/Earth.jpeg');
+    const earthTexture = textureLoader.load(earthTextureImg);
     const earthGeometry = new THREE.SphereGeometry(20, 128, 128);
     const earthMaterial = new THREE.MeshBasicMaterial({ map: earthTexture });
     const earth = new THREE.Mesh(earthGeometry, earthMaterial);
@@ -48,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scene.add(earth);
 
     // Asteroid
-    const asteroidTexture = textureLoader.load('Textures/asteroid_texture.jpeg');
+    const asteroidTexture = textureLoader.load(asteroidTextureImg);
     const asteroidGeometry = new THREE.SphereGeometry(15, 128, 128);
     const asteroidMaterial = new THREE.MeshBasicMaterial({ map: asteroidTexture });
     const asteroid = new THREE.Mesh(asteroidGeometry, asteroidMaterial);

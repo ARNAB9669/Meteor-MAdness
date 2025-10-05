@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+import sunTexture from './Textures/sun_texture.jpg';
+import earthTexture from './Textures/Earth.jpeg';
+import asteroidTexture from './Textures/asteroid_texture.jpeg';
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -55,12 +58,12 @@ document.addEventListener("DOMContentLoaded", () => {
             solarSystemGroup.add(new THREE.Points(starGeom, new THREE.PointsMaterial({ color: 0xffffff, size: 0.2 })));
 
             // --- Sun ---
-            const sun = new THREE.Mesh(new THREE.SphereGeometry(2.5, 75, 75), new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('Textures/sun_texture.jpg') }));
+            const sun = new THREE.Mesh(new THREE.SphereGeometry(2.5, 75, 75), new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(sunTexture) }));
             solarSystemGroup.add(sun);
 
             // --- Earth ---
             const earthOrbitRadius = 12;
-            const earth = new THREE.Mesh(new THREE.SphereGeometry(0.8, 75, 75), new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('Textures/Earth.jpeg') }));
+            const earth = new THREE.Mesh(new THREE.SphereGeometry(0.8, 75, 75), new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(earthTexture) }));
             solarSystemGroup.add(earth);
 
             const earthOrbitPoints = [];
@@ -72,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             solarSystemGroup.add(earthOrbitLine);
 
             // --- Asteroid ---
-            const asteroid = new THREE.Mesh(new THREE.IcosahedronGeometry(0.35, 1), new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('Textures/asteroid_texture.jpeg') }));
+            const asteroid = new THREE.Mesh(new THREE.IcosahedronGeometry(0.35, 1), new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load(asteroidTexture) }));
             solarSystemGroup.add(asteroid);
 
             // Asteroid orbit calculation using orbital period
