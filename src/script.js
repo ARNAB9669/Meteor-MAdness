@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "Arnab Biswas": "FullStack Developer, 3D Animation,API Integration",
         "Rajdeep Das": "UX/UI, Frontend Developer",
         "Arya Kundu": "Presentation Maker, Communication",
-        "Prolay Mondal": "UX/UI"
+        "Prolay Mondal": "video editor",
+        "Sayak Roy": "UX/UI"
     };
 
     // Get the select element and the span
@@ -51,3 +52,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
